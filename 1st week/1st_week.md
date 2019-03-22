@@ -7,6 +7,64 @@
 > ###### a. 如果结果小于给定结果值，则用次最小值与最大值相加，以此类推，直到找到符合条件的组合或循环终止返回；
 ###### b. 如果结果大于给定结果值，则用次最大值与最小值相加，以此类推，直到找到符合条件的组合或循环终止返回；
 
+``` Java
+class Solution {
+    public static int[] twoSum(int[] nums, int target) {
+        int[] original = nums.clone();
+        int[] result = new int[2];
+        quickSort(nums, 0, nums.length - 1);
+        int smaller = 0;
+        int bigger = nums.length - 1;
+        for(; smaller < bigger;) {
+            if(nums[smaller] + nums[bigger] > target)
+                bigger--;
+            else if(nums[smaller] + nums[bigger] < target)
+                smaller++;
+            else 
+                break;
+        }
+        boolean firstSeted = false;
+        boolean secondSeted = false;
+        for (int i = 0; i < original.length; i++) {
+            if (original[i] == nums[smaller] && !firstSeted) {
+                result[0] = i;
+                firstSeted = true;
+            } else if (original[i] == nums[bigger] && !secondSeted) {
+                result[1] = i;
+                secondSeted = true;
+            }
+        }
+        return result;
+    }
+    
+    public static void quickSort(int[] nums, int start, int end) {
+        if(start < end) {
+            int index = partition(nums, start, end);
+            quickSort(nums, start, index - 1);
+            quickSort(nums, index + 1, end);
+        }
+        
+    }
+    
+    public static int partition(int[] nums, int start, int end) {
+        int index = start;
+        int pivot = nums[index];
+        while(index < end) {
+            while(index < end && nums[end] > pivot) {
+                end--;
+            }
+            nums[index] = nums[end];
+            while(index < end && nums[index] <= pivot) {
+                index++;
+            }
+            nums[end] = nums[index];
+        }
+        nums[index] = pivot;
+        return index;
+    }
+}
+```
+
 需要注意的点是如果存在相同值的元素，而且相同值的元素恰好就是答案，需要进行判断。
 > 我开始审题错误，误以为数组不含重复元素，结果没有通过测试。
 
