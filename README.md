@@ -11,4 +11,5 @@ ARTS 当然不是字面的意思，它是一个缩写，由四部分构成：
 
 共勉，加油！
 
-[第一周](https://github.com/5452/arts/blob/master/1st%20week/1st_week.md)
+* [第一周](https://github.com/5452/arts/blob/master/1st%20week/1st_week.md)
+* [第二周](https://github.com/5452/arts/blob/master/2nd%20week/2nd_week.md)
