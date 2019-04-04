@@ -13,3 +13,4 @@ ARTS 当然不是字面的意思，它是一个缩写，由四部分构成：
 
 * [第一周](https://github.com/5452/arts/blob/master/1st%20week/1st_week.md)
 * [第二周](https://github.com/5452/arts/blob/master/2nd%20week/2nd_week.md)
+* [第三周](https://github.com/5452/arts/blob/master/3rd%20week/3rd_week.md)
